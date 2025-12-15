@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.donation-card, .messages-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.app-title {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.app-subtitle {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.wallet-info {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.donation-form {
+  margin-bottom: 20px;
+}
+
+.amount-input, .message-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-family: inherit;
+}
+
+.amount-input {
+  text-align: center;
+  font-weight: bold;
+}
+
+.message-input {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.amount-input:focus, .message-input:focus {
+  outline: 3px solid #48bb78;
+}
+
+.quick-amounts {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quick-amount-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.quick-amount-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.donate-button, .connect-button {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.4em;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.donate-button {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  box-shadow: 0 4px 15px rgba(245, 101, 101, 0.4);
+}
+
+.donate-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(245, 101, 101, 0.6);
+}
+
+.connect-button {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.connect-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(72, 187, 120, 0.6);
+}
+
+.donate-button:disabled, .connect-button:disabled {
+  background: #718096;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.withdraw-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.withdraw-button:hover {
+  transform: translateY(-2px);
+}
+
+.withdraw-button:disabled {
+  background: #718096;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.my-donation {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(72, 187, 120, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(72, 187, 120, 0.4);
+  text-align: center;
+}
+
+.messages-header {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.messages-list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.messages-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.messages-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.messages-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.message-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #ffd700;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.message-donor {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.message-amount {
+  color: #48bb78;
+  font-weight: bold;
+}
+
+.message-text {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.message-time {
+  font-size: 0.85em;
+  opacity: 0.6;
+  text-align: right;
+}
+
+.no-messages {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+  font-size: 1.1em;
+}
+
+.meme-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.meme-container {
+  text-align: center;
+  animation: slideUp 0.5s ease;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.meme-title {
+  font-size: 2.5em;
+  margin-bottom: 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.meme-image {
+  max-width: 90vw;
+  max-height: 60vh;
+  border-radius: 15px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  display: block;
+  object-fit: contain;
+}
+
+.close-meme-button {
+  padding: 15px 40px;
+  font-size: 1.2em;
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(245, 101, 101, 0.4);
+  flex-shrink: 0;
+}
+
+.close-meme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 101, 101, 0.6);
+}
+
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 2.2em;
+  }
+  
+  .app-subtitle {
+    font-size: 1.1em;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .meme-title {
+    font-size: 1.8em;
+  }
+
+  .donation-card, .messages-card {
+    padding: 25px;
+  }
+}

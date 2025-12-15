@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Environment variables
+.env
+.env.local
+blockchain/.env
+
+# Foundry
+blockchain/out/
+blockchain/cache/
+blockchain/broadcast/
+blockchain/lib/
+
+# OS
+.DS_Store
