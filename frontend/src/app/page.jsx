@@ -202,9 +202,9 @@ export default function Home() {
   if (!account) {
     return (
       <div className="app-container">
-        <h1 className="app-title">💝 Донат dApp</h1>
+        <h1 className="app-title">💝 Donate dApp</h1>
         <p className="app-subtitle">
-          Поддержите нас криптовалютой и получите благодарственный мем!
+          Вы нам денежку - мы вам смешнявку 🎉
         </p>
         <div className="donation-card" style={{ maxWidth: '600px', margin: '0 auto' }}>
           <button onClick={connectWallet} className="connect-button" disabled={loading}>
